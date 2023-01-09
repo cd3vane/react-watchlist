@@ -1,12 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-type HeaderProps = {
-    numberInWatchlist?: number;
-    numberWatched?: number
-}
-function Header({ numberInWatchlist = 0, numberWatched = 0 }: HeaderProps) {
+function Header() {
     return (
         <>
             <nav>

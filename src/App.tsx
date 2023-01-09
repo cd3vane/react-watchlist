@@ -4,7 +4,7 @@ import './App.css';
 import Header from "./components/Header";
 import Watchlist from "./components/Watchlist";
 import Watched from "./components/Watched";
-import AddMovie from "./components/AddMovie";
+import AddMovie from "./components/movies/AddMovie";
 
 export type Movie = {
     id: number;

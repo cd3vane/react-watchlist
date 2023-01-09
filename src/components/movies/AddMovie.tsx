@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-import { Movie } from '../types'
+import { Movie } from '../../types'
 import MovieCard from "./MovieCard";
 
 const AddMovie = () => {
@@ -13,8 +13,12 @@ const AddMovie = () => {
         })
     }, [])
     return (
-        <div data-testid="add-form">{movies ?
-            (movies.map((movie) => <MovieCard movie={movie} key={movie.id}/>)) : null }
+        <div className="row">
+            {movies ?
+                (movies.map((movie) => (
+                    <div className="col s12 m6 l3">
+                        <MovieCard movie={movie} key={movie.id}/>
+                    </div> ))) : <h2>Unable to connect to TMDB</h2> }
         </div>
     );
 }
