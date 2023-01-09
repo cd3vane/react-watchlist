@@ -8,14 +8,16 @@ const data = [
         "title": "The Northman",
         "director": "Robert Eggars",
         "poster_link": "https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2022/03/THE_NORTHMAN_Dig_1-SHT_Dom_Payoff_FIN01_DOLBY-1.jpg?resize=740%2C1096&ssl=1",
-        "genre": "RIPS"
+        "genre": "RIPS",
+        "watched": false,
     },
     {
         "id": 2,
         "title": "Evil Dead",
         "director": "Fede Alverez",
-        "poster_link": "https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2013/02/Evil_Dead_Poster_Red_2_20_13.jpg,",
-        "genre": "Horror"
+        "poster_link": "https://www.scriptslug.com/assets/posters/_posterPageJpg/evil-dead-2013.jpg",
+        "genre": "Horror",
+        "watched": true,
     }
 ]
 

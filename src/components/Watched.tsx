@@ -7,11 +7,11 @@ type WatchlistProps = {
 }
 function Watchlist({ movies }: WatchlistProps) {
     return (
-        <div data-testid="movies">{movies ? movies.map((movie) => (
+        <div data-testid="movies">{movies && movies.map((movie) => (
             <div key={movie.id}>
                 <WatchlistItem movie={movie} />
             </div>
-        )) : "There currently aint nothing here"}
+        ))}
         </div>
     );
 }
