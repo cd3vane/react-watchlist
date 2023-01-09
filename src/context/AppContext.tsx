@@ -1,6 +1,6 @@
 import {Movie} from "../types";
 import {createContext, useEffect, useReducer} from "react";
-import AppReducer, {ListAction, WatchlistState} from "./AppReducer";
+import AppReducer, { WatchlistState} from "./AppReducer";
 
 const initialState : WatchlistState = {
 
@@ -17,7 +17,8 @@ const initialState : WatchlistState = {
     remove: () => {}
 };
 
-export const ListContext = createContext<WatchlistState | null>(initialState);
+export const ListContext = createContext<WatchlistState>(initialState);
+
 export const ListProvider = (props : any) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
@@ -27,11 +28,11 @@ export const ListProvider = (props : any) => {
 
     const addMovieToWatchlist = (movie : Movie) => {
         console.log("Attempting add " + movie.title);
-        dispatch({ type: ListAction.ADD, payload: movie});
+        dispatch({ type: "ADD", payload: movie});
     }
     const removeMovieFromWatchlist = (id : number) => {
         console.log("Attempting remove " + id);
-        dispatch({ type: ListAction.REMOVE, payload: id})
+        dispatch({ type: "REMOVE", payload: id})
     }
 
     return (

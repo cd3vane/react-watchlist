@@ -1,8 +1,4 @@
 import { Movie } from '../types'
-export enum ListAction {
-    ADD = 'ADD',
-    REMOVE = 'REMOVE',
-}
 
 export type WatchlistState = {
     movies: Movie[]
@@ -11,19 +7,18 @@ export type WatchlistState = {
 }
 
 
-type ReducerAction = {
-    type: ListAction
-    payload: Movie | number
-}
+type ReducerAction = 
+{type: 'ADD', payload: Movie} |
+{type: 'REMOVE', payload: number}
 
-export default (state : WatchlistState, action : ReducerAction) => {
+const AppReducer = (state : WatchlistState, action : ReducerAction) : WatchlistState=> {
     switch (action.type) {
-        case ListAction.ADD:
+        case "ADD":
             return {
                 ...state,
                 movies: [...state.movies, action.payload],
-            };
-        case ListAction.REMOVE:
+            } ;
+        case "REMOVE":
             return {
                 ...state,
                 movies: state.movies.filter(
@@ -34,3 +29,5 @@ export default (state : WatchlistState, action : ReducerAction) => {
             return state;
     }
 };
+
+export default AppReducer;
