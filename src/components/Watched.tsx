@@ -1,19 +1,20 @@
 import React from 'react';
-import WatchlistItem from './WatchlistItem';
-import { Movie } from '../App';
+import { Movie } from '../types';
+import MovieCard from "./movies/MovieCard";
 
 type WatchlistProps = {
     movies?: Movie[];
 }
-function Watchlist({ movies }: WatchlistProps) {
+function Watched({ movies }: WatchlistProps) {
     return (
-        <div data-testid="movies">{movies && movies.map((movie) => (
-            <div key={movie.id}>
-                <WatchlistItem movie={movie} />
-            </div>
-        ))}
+        <div className="row">
+            {movies ?
+                (movies.map((movie) => (
+                    <div key={movie.id} className="col s12 m6 l3">
+                        <MovieCard movie={movie} />
+                    </div> ))) : <h2>You haven't watched anything yet, get to it</h2> }
         </div>
     );
 }
 
-export default Watchlist;
+export default Watched;

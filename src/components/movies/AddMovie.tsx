@@ -16,8 +16,8 @@ const AddMovie = () => {
         <div className="row">
             {movies ?
                 (movies.map((movie) => (
-                    <div className="col s12 m6 l3">
-                        <MovieCard movie={movie} key={movie.id}/>
+                    <div key={movie.id} className="col s12 m6 l3">
+                        <MovieCard movie={movie} />
                     </div> ))) : <h2>Unable to connect to TMDB</h2> }
         </div>
     );

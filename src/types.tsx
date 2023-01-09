@@ -3,8 +3,8 @@ export type Movie = {
 
     overview: string,
     poster_path: string,
-    release_date: string, //yyyy-mm-dd
-    runtime: number, // In minutes
-    tagline: string
+    release_date?: string, //yyyy-mm-dd
+    runtime?: number, // In minutes
+    tagline?: string
     title: string,
 }

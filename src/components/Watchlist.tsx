@@ -1,17 +1,16 @@
-import React from 'react';
-import WatchlistItem from './WatchlistItem';
-import { Movie } from '../App';
+import {useContext} from 'react';
+import MovieCard from "./movies/MovieCard";
+import {WatchlistContext} from "./context/AppContext";
 
-type WatchlistProps = {
-    movies?: Movie[];
-}
-function Watchlist({ movies }: WatchlistProps) {
+function Watchlist() {
+    const watchlist = useContext(WatchlistContext);
     return (
-        <div data-testid="movies">{movies ? movies.map((movie) => (
-            <div key={movie.id}>
-                <WatchlistItem movie={movie} />
-            </div>
-        )) : "There currently aint nothing here"}
+        <div className="row">
+            {watchlist ?
+                (watchlist.movies.map((movie) => (
+                    <div key={movie.id} className="col s12 m6 l3">
+                        <MovieCard movie={movie} />
+                    </div> ))) : <h2>Currently, no movies in your watchlist, go add some</h2> }
         </div>
     );
 }

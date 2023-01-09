@@ -14,8 +14,7 @@ function MovieControls({type, movie} : ControlProps) {
                         <i className="material-icons">add_to_queue</i>
                     </button>
 
-                    <button className="ctrl-btn"
-                    >
+                    <button className="ctrl-btn">
                         <i className="material-icons">video_library</i>
                     </button>
                 </>
