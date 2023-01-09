@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Watchlist from "./components/Watchlist";
 import Watched from "./components/Watched";
 import AddMovie from "./components/movies/AddMovie";
-import {WatchlistContext, sampleAppContext} from "./components/context/AppContext";
+import {WatchlistContext, sampleAppContext} from "./context/AppContext";
 
 const App = () => {
   return (

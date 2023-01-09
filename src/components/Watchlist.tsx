@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import MovieCard from "./movies/MovieCard";
-import {WatchlistContext} from "./context/AppContext";
+import {WatchlistContext} from "../context/AppContext";
 
 function Watchlist() {
     const watchlist = useContext(WatchlistContext);

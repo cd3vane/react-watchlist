@@ -1,4 +1,4 @@
-import {Movie} from "../../types";
+import {Movie} from "../types";
 import {createContext} from "react";
 
 interface AppContext {
