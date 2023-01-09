@@ -11,7 +11,7 @@ function Watched({ movies }: WatchlistProps) {
             {movies ?
                 (movies.map((movie) => (
                     <div key={movie.id} className="col s12 m6 l3">
-                        <MovieCard movie={movie} />
+                        <MovieCard movie={movie} type="watched"/>
                     </div> ))) : <h2>You haven't watched anything yet, get to it</h2> }
         </div>
     );

@@ -4,11 +4,11 @@ import Header from "./components/Header";
 import Watchlist from "./components/Watchlist";
 import Watched from "./components/Watched";
 import AddMovie from "./components/movies/AddMovie";
-import {WatchlistContext, sampleAppContext} from "./context/AppContext";
+import {ListProvider} from "./context/AppContext";
 
 const App = () => {
   return (
-      <WatchlistContext.Provider value={sampleAppContext}>
+      <ListProvider>
           <Router>
             <div className="container-fluid">
                 <Header />
@@ -20,7 +20,7 @@ const App = () => {
 
             </div>
           </Router>
-      </WatchlistContext.Provider>
+      </ListProvider>
   );
 }
 

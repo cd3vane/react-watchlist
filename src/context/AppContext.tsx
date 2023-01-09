@@ -1,25 +1,47 @@
 import {Movie} from "../types";
-import {createContext} from "react";
+import {createContext, useEffect, useReducer} from "react";
+import AppReducer, {ListAction, WatchlistState} from "./AppReducer";
 
-interface AppContext {
-    movies: Movie[];
-}
+const initialState : WatchlistState = {
 
-export const WatchlistContext = createContext<AppContext | null>(null);
-
-export const sampleAppContext: AppContext = {
-    movies: [{
-        "id": 76600,
-        "overview": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
-        "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
-        "release_date": "2022-12-14",
-        "title": "Avatar: The Way of Water",
-    },
+    movies: [
         {
-            "id": 315162,
-            "overview": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
-            "poster_path": "/lmf0zzR7ritjOL3qumRh3hfvOFK.jpg",
-            "release_date": "2022-12-07",
-            "title": "Puss in Boots: The Last Wish",
-        },]
+            id: 550,
+            overview: "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+            poster_path: "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+            release_date: "1999-10-15",
+            title: "Fight Club",
+        },
+    ],
+    add: () => {},
+    remove: () => {}
 };
+
+export const ListContext = createContext<WatchlistState | null>(initialState);
+export const ListProvider = (props : any) => {
+    const [state, dispatch] = useReducer(AppReducer, initialState);
+
+    useEffect(() => {
+        localStorage.setItem("watchlist", JSON.stringify(state.movies));
+    }, [state]);
+
+    const addMovieToWatchlist = (movie : Movie) => {
+        console.log("Attempting add " + movie.title);
+        dispatch({ type: ListAction.ADD, payload: movie});
+    }
+    const removeMovieFromWatchlist = (id : number) => {
+        console.log("Attempting remove " + id);
+        dispatch({ type: ListAction.REMOVE, payload: id})
+    }
+
+    return (
+        <ListContext.Provider
+            value={{
+                movies: state.movies,
+                add: addMovieToWatchlist,
+                remove: removeMovieFromWatchlist
+            }}>
+            {props.children}
+        </ListContext.Provider>
+    );
+}
