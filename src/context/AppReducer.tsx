@@ -21,12 +21,12 @@ export default (state : WatchlistState, action : ReducerAction) => {
         case ListAction.ADD:
             return {
                 ...state,
-                watchlist: [action.payload, ...state.movies],
+                movies: [...state.movies, action.payload],
             };
         case ListAction.REMOVE:
             return {
                 ...state,
-                watchlist: state.movies.filter(
+                movies: state.movies.filter(
                     (movie : Movie) => movie.id !== action.payload
                 ),
             };
