@@ -8,11 +8,13 @@ function Watched() {
 
     return (
         <div className="container">
-            <h1 className="text">Watched</h1>
+            <div className="header">
+                <h1 className="text">Watched</h1>
 
-            <span className="count-pill">
-                {watched && <>{watched.length} {watched.length === 1 ? "Movie" : "Movies"}</>}
-            </span>
+                <span className="count-pill">
+                    {watched && <>{watched.length} {watched.length === 1 ? "Movie" : "Movies"}</>}
+                </span>
+            </div>
 
 
                 {watched.length > 0 ?

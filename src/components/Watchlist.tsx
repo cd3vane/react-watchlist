@@ -8,11 +8,13 @@ function Watchlist() {
 
     return (
         <div className="container">
-            <h1 className="text">My Watchlist</h1>
+            <div className="header">
+                <h1 className="text">My Watchlist</h1>
 
-            <span className="count-pill">
-                {watchlist && <>{watchlist.length} {watchlist.length === 1 ? "Movie" : "Movies"}</>}
-            </span>
+                <span className="count-pill">
+                    {watchlist && <>{watchlist.length} {watchlist.length === 1 ? "Movie" : "Movies"}</>}
+                </span>
+            </div>
 
 
                 {watchlist.length ?
