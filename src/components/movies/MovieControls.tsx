@@ -7,17 +7,17 @@ type ControlProps = {
     movie: Movie;
 }
 function MovieControls({type, movie} : ControlProps) {
-    const watchlist  = useContext(ListContext);
+    const {addWatchlist, addWatched, removeWatchlist, removeWatched} = useContext(ListContext);
 
     return (
         <div className="inner-card-controls">
             {type === "watchlist" && (
                 <>
-                    <button className="ctrl-btn" onClick={() => watchlist?.remove(movie.id)}>
+                    <button className="ctrl-btn" onClick={() => removeWatchlist(movie.id)}>
                         <i className="material-icons" >remove_from_queue</i>
                     </button>
 
-                    <button className="ctrl-btn" onClick={() => watchlist?.add(movie)}>
+                    <button className="ctrl-btn" onClick={() => addWatchlist(movie)}>
                         <i className="material-icons">video_library</i>
                     </button>
                 </>
@@ -25,11 +25,11 @@ function MovieControls({type, movie} : ControlProps) {
 
             {type === "watched" && (
                 <>
-                    <button className="ctrl-btn">
+                    <button className="ctrl-btn" onClick={() => removeWatched(movie.id)}>
                         <i className="material-icons">add_to_queue</i>
                     </button>
 
-                    <button className="ctrl-btn">
+                    <button className="ctrl-btn" onClick={() => addWatched(movie)}>
                         <i className="material-icons">video_library</i>
                     </button>
                 </>
