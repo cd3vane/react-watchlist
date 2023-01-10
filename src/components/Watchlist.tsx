@@ -18,11 +18,13 @@ function Watchlist() {
 
 
                 {watchlist.length ?
-                    (watchlist.map((movie) => (
-                        <div className="movie-grid">
+                    (<div className="movie-grid">
+                        {watchlist.map((movie) => (
+
                         <div key={movie.id} className="col s12 m4 l3">
                             <MovieCard movie={movie} type="watchlist"/>
-                        </div> </div>))) : <h3>Currently, no movies are in your watchlist,
+                        </div> ))}
+                    </div> ): <h3>Currently, no movies are in your watchlist,
                         <Link to="/search"> go find some <i className="small material-icons" >search</i></Link></h3> }
 
         </div>

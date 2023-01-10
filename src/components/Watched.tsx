@@ -18,12 +18,13 @@ function Watched() {
 
 
                 {watched.length > 0 ?
-                    (watched.map((movie) => (
-                        <div className="movie-grid">
+                    (<div className="movie-grid">
+                            {watched.map((movie) => (
+
                             <div key={movie.id} className="col s12 m4 l3">
                                 <MovieCard movie={movie} type="watched"/>
-                            </div>
-                        </div>))) : <h3>You haven't watched anything yet, <Link to="/search">get watching <i className="small material-icons" >local_movies</i></Link></h3> }
+
+                        </div>))} </div>) : <h3>You haven't watched anything yet, <Link to="/search">get watching <i className="small material-icons" >local_movies</i></Link></h3> }
 
         </div>
     );
