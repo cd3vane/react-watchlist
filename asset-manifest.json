@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-watchlist/static/css/main.c00d6f91.css",
-    "main.js": "/react-watchlist/static/js/main.9a8cb756.js",
+    "main.js": "/react-watchlist/static/js/main.7f9e628f.js",
     "static/js/787.2c859936.chunk.js": "/react-watchlist/static/js/787.2c859936.chunk.js",
     "index.html": "/react-watchlist/index.html",
     "main.c00d6f91.css.map": "/react-watchlist/static/css/main.c00d6f91.css.map",
-    "main.9a8cb756.js.map": "/react-watchlist/static/js/main.9a8cb756.js.map",
+    "main.7f9e628f.js.map": "/react-watchlist/static/js/main.7f9e628f.js.map",
     "787.2c859936.chunk.js.map": "/react-watchlist/static/js/787.2c859936.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c00d6f91.css",
-    "static/js/main.9a8cb756.js"
+    "static/js/main.7f9e628f.js"
   ]
 }
