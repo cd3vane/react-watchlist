@@ -27,7 +27,7 @@ export const ResultCard = ({ movie } : ResultCardProps) => {
 
     return (
         <div className="col s12 m7">
-            <div className="card horizontal blue-grey lighten-1">
+            <div className="card horizontal blue-grey">
                 <div className="card-image">
                     <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                          alt={`${movie.title} Poster`}></img>
@@ -40,7 +40,7 @@ export const ResultCard = ({ movie } : ResultCardProps) => {
                     <div className="card-action">
                         <div className="controls">
                             <button
-                                className="btn"
+                                className="btn green accent-3"
                                 disabled={watchlistDisabled}
                                 onClick={() => addWatchlist(movie)}
                             >
@@ -48,7 +48,7 @@ export const ResultCard = ({ movie } : ResultCardProps) => {
                             </button>
 
                             <button
-                                className="btn"
+                                className="btn green accent-3"
                                 disabled={watchedDisabled}
                                 onClick={() => addWatched(movie)}
                             >

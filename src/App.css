@@ -118,6 +118,16 @@ body {
   margin: 0;
 }
 
+.count-pill {
+  display: block;
+  background-color: #cfd8dc;
+  padding: 5px 15px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 999px;
+  color: black;
+}
+
 .ctrl-btn:hover {
   color: var(--secondary);
   cursor: pointer;
@@ -127,4 +137,16 @@ body {
   color: #c4c4c4;
   font-size: 3rem;
   text-align: center;
+}
+
+.btn{
+  margin: 5px;
+}
+
+.text {
+  font-size: 100px;
+  font-weight: 600;
+  background: linear-gradient(to right, #ffb95a, #b321de, #44adfb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

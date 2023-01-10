@@ -8,7 +8,7 @@ function Header() {
         <>
             <nav>
                 <div className="nav-wrapper black">
-                    <a href="/react-watchlist" className="brand-logo">Watchlist</a>
+                    <a href="/watchlist" className="brand-logo">Watchlist</a>
                     <ul className="right hide-on-med-and-down">
                         <li><Link to="/watchlist" >Watchlist</Link></li>
                         <li><Link to="/watched" >Watched</Link></li>
