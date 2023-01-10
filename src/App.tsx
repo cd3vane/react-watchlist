@@ -13,7 +13,7 @@ const App = () => {
             <div className="container-fluid">
                 <Header />
                     <Routes>
-                        <Route path="/" element={<Watchlist />} />
+                        <Route path="/watchlist" element={<Watchlist />} />
                         <Route path="/watched" element={<Watched />} />
                         <Route path="/search"  element={<AddMovie />} />
                     </Routes>

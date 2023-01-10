@@ -8,9 +8,9 @@ function Header() {
         <>
             <nav>
                 <div className="nav-wrapper black">
-                    <a href="/" className="brand-logo">Watchlist</a>
+                    <a href="/react-watchlist" className="brand-logo">Watchlist</a>
                     <ul className="right hide-on-med-and-down">
-                        <li><Link to="/" >Watchlist</Link></li>
+                        <li><Link to="/watchlist" >Watchlist</Link></li>
                         <li><Link to="/watched" >Watched</Link></li>
                         <li ><Link to="/search" className="waves-effect waves-light btn">+ Add</Link></li>
                     </ul>

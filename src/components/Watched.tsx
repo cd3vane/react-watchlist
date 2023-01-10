@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import { Movie } from '../types';
 import MovieCard from "./movies/MovieCard";
 import {ListContext} from "../context/AppContext";
 
