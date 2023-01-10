@@ -17,7 +17,7 @@ const AddMovie = () => {
         })
     };
     return (
-        <>
+        <div className="container">
             <div className="row">
                 <div className="input-field col s12">
                     <input type="text"
@@ -31,7 +31,7 @@ const AddMovie = () => {
                     <div key={movie.id} className="row">
                         <ResultCard movie={movie} />
                     </div> ))) : '' }
-        </>
+        </div>
     );
 }
 

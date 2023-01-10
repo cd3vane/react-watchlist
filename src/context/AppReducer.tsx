@@ -38,7 +38,7 @@ const AppReducer = (state : ListState, action : ReducerAction) : ListState=> {
         case "REMOVE_WATCHED":
             return {
                 ...state,
-                watchlist: state.watchlist.filter(
+                watched: state.watched.filter(
                     (movie : Movie) => movie.id !== action.payload
                 ),
             };

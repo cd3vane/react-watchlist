@@ -6,17 +6,17 @@ function Watchlist() {
     const { watchlist } = useContext(ListContext);
 
     return (
-        <div>
-            <h1 className="center-align">My Watchlist</h1>
+        <div className="container">
+            <h1>My Watchlist</h1>
 
-            <h4 className="center-align">
+            <h4>
                 {watchlist && <>{watchlist.length} {watchlist.length === 1 ? "Movie" : "Movies"}</>}
-              </h4>
+            </h4>
 
-            <div className="row">
+            <div className="movie-grid">
                 {watchlist ?
                     (watchlist.map((movie) => (
-                        <div key={movie.id} className="col s12 m6 l3">
+                        <div key={movie.id} className="col s12 m4 l3">
                             <MovieCard movie={movie} type="watchlist"/>
                         </div> ))) : <h2>Currently, no movies in your watchlist, go add some</h2> }
             </div>

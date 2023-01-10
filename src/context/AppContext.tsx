@@ -23,19 +23,15 @@ export const ListProvider = (props : any) => {
     }, [state]);
 
     const addMovieToWatchlist = (movie : Movie) => {
-        console.log("Attempting add " + movie.title);
         dispatch({ type: "ADD_WATCHLIST", payload: movie});
     }
     const removeMovieFromWatchlist = (id : number) => {
-        console.log("Attempting remove " + id);
         dispatch({ type: "REMOVE_WATCHLIST", payload: id})
     }
     const addMovieToWatched = (movie : Movie) => {
-        console.log("Attempting add " + movie.title);
         dispatch({ type: "ADD_WATCHED", payload: movie});
     }
     const removeMovieFromWatched = (id : number) => {
-        console.log("Attempting remove " + id);
         dispatch({ type: "REMOVE_WATCHED", payload: id})
     }
 

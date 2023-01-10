@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import userEvent from "@testing-library/user-event";
 
+
 test('title renders on page', () => {
   render(<App />)
   const linkElement = screen.getByText(/my watchlist/i);

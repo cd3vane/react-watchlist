@@ -27,7 +27,7 @@ export const ResultCard = ({ movie } : ResultCardProps) => {
 
     return (
         <div className="col s12 m7">
-            <div className="card horizontal">
+            <div className="card horizontal blue-grey lighten-1">
                 <div className="card-image">
                     <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                          alt={`${movie.title} Poster`}></img>

@@ -13,11 +13,16 @@ function MovieControls({type, movie} : ControlProps) {
         <div className="inner-card-controls">
             {type === "watchlist" && (
                 <>
-                    <button className="ctrl-btn" onClick={() => removeWatchlist(movie.id)}>
-                        <i className="material-icons" >remove_from_queue</i>
+                    <button className="ctrl-btn" onClick={() => removeWatchlist(movie.id)} title="Remove from watchlist">
+                        <i className="material-icons" >remove_circle_outline</i>
                     </button>
 
-                    <button className="ctrl-btn" onClick={() => addWatchlist(movie)}>
+                    <button className="ctrl-btn" onClick={() => {
+                        addWatched(movie)
+                        removeWatchlist(movie.id)
+
+                    }
+                    } title="Add to watched">
                         <i className="material-icons">video_library</i>
                     </button>
                 </>
@@ -25,12 +30,15 @@ function MovieControls({type, movie} : ControlProps) {
 
             {type === "watched" && (
                 <>
-                    <button className="ctrl-btn" onClick={() => removeWatched(movie.id)}>
-                        <i className="material-icons">add_to_queue</i>
+                    <button className="ctrl-btn" onClick={() => removeWatched(movie.id)} title="Remove from watched">
+                        <i className="material-icons">remove_circle_outline</i>
                     </button>
 
-                    <button className="ctrl-btn" onClick={() => addWatched(movie)}>
-                        <i className="material-icons">video_library</i>
+                    <button className="ctrl-btn" onClick={() => {
+                        removeWatched(movie.id)
+                        addWatchlist(movie)}
+                    } title="Add to watchlist">
+                        <i className="material-icons">add_to_queue</i>
                     </button>
                 </>
             )}
