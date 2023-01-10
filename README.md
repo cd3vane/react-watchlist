@@ -1,5 +1,7 @@
 # React with Typescript Watchlist
 
+## [Live Demo](https://cd3vane.github.io/watchlist)
+
 ## Features
 - Search for movies using TMDB API 
 - Add movie to watchlist or watched list
