@@ -12,6 +12,7 @@ function Header() {
                     <ul className="right hide-on-med-and-down">
                         <li><Link to="/watchlist" >Watchlist</Link></li>
                         <li><Link to="/watched" >Watched</Link></li>
+                        <li><Link to="/popular" >Popular</Link></li>
                         <li ><Link to="/search" className="waves-effect waves-light btn">+ Add</Link></li>
                     </ul>
                 </div>

@@ -5,6 +5,7 @@ import Watchlist from "./components/Watchlist";
 import Watched from "./components/Watched";
 import AddMovie from "./components/movies/AddMovie";
 import {ListProvider} from "./context/AppContext";
+import PopularShows from "./components/movies/Popular";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
                         <Route path="/watchlist" element={<Watchlist />} />
                         <Route path="/watched" element={<Watched />} />
                         <Route path="/search"  element={<AddMovie />} />
+                        <Route path="/popular" element={<PopularShows />} />
                     </Routes>
 
             </div>

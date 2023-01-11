@@ -8,3 +8,12 @@ export type Movie = {
     tagline?: string
     title: string,
 }
+
+
+export type Show = {
+    id: number,
+
+    overview: string,
+    poster_path: string,
+    name: string,
+}
