@@ -1,16 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from "axios";
 import {Show} from "../../types";
 import MovieCard from "./MovieCard";
 
-function Popular() {
+enum Category{
+    movie = 'movie',
+    tv = 'tv'
+}
+function Discover() {
     const [shows, setShows] = useState<Show[] | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
-    const [category, setCategory] = useState<string>('movie');
+    const [pageNumber, setPage] = useState<number>(1)
+    const [category, setCategory] = useState<Category>(Category.movie);
+    const [filter, setFilter] = useState<string>('popularity.desc');
 
     useEffect(() => {
         setLoading(true)
-        const url = `https://api.themoviedb.org/3/${category}/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false`
+        const url = `https://api.themoviedb.org/3/discover/${category}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=${pageNumber}&include_adult=false&sort_by=${filter}`
         axios.get(url).then((response) => {
             setShows(response.data.results);
             setLoading(false)
@@ -23,8 +29,8 @@ function Popular() {
         return (
             <div className="container">
                 <div className="header">
-                    <h1> <button className="header-btn" onClick={() => setCategory('movie')}>Movies</button> |
-                        <button className="header-btn" onClick={() => setCategory('tv')}>TV Shows</button></h1>
+                    <h1> <button className="header-btn" onClick={() => setCategory(Category.movie)}>Movies</button> |
+                        <button className="header-btn" onClick={() => setCategory(Category.tv)}>TV Shows</button></h1>
                 </div>
 
                 {shows ?  (<div className="movie-grid">
@@ -39,4 +45,4 @@ function Popular() {
     }
 }
 
-export default Popular;
+export default Discover;
