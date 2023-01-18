@@ -21,16 +21,36 @@ function Discover() {
             setShows(response.data.results);
             setLoading(false)
         })
-    }, [category])
+    }, [category, pageNumber])
+
+    const switchCategory = (current : Category) => {
+        if(current === Category.movie){
+            setCategory(Category.tv);
+        } else{
+            setCategory(Category.movie);
+        }
+        setPage(1);
+    }
 
     if (loading) {
-        return <p>Loading...</p>;
+        return( <div className='container'>
+            <h1>Loading...</h1>;
+        </div>) 
     }else{
         return (
             <div className="container">
                 <div className="header">
-                    <h1> <button className="header-btn" onClick={() => setCategory(Category.movie)}>Movies</button> |
-                        <button className="header-btn" onClick={() => setCategory(Category.tv)}>TV Shows</button></h1>
+                    <h1><button className="header-btn" onClick={() => switchCategory(Category.tv)}>Movies</button> |
+                        <button className="header-btn" onClick={() => switchCategory(Category.movie)}>TV Shows</button></h1>
+                </div>
+
+                <div className='center-align'>
+                    <button className="waves-effect waves-light btn" onClick={() => {
+                        if(pageNumber > 1){
+                            setPage(pageNumber - 1)
+                        }
+                        }}>Previous</button> {pageNumber}
+                    <button className="waves-effect waves-light btn" onClick={() => setPage(pageNumber + 1)}> Next</button>
                 </div>
 
                 {shows ?  (<div className="movie-grid">
@@ -40,6 +60,14 @@ function Discover() {
                             <MovieCard show={show} />
                         </div> ))}
                 </div> ) : 'No movies to show'}
+                <div className='center-align'>
+                    <button className="waves-effect waves-light btn" onClick={() => {
+                        if(pageNumber > 1){
+                            setPage(pageNumber - 1)
+                        }
+                        }}>Previous</button> {pageNumber}
+                    <button className="waves-effect waves-light btn" onClick={() => setPage(pageNumber + 1)}> Next</button>
+                </div>
             </div>
         );
     }
