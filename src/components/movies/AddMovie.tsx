@@ -29,7 +29,7 @@ const AddMovie = () => {
             </div>
             {results ?
                 (results.map((movie) => (
-                    <div key={movie.id} className="row">
+                    <div key={movie.id} className={`row ${movie.title.replaceAll(' ', '-')}`}>
                         <ResultCard movie={movie} />
                     </div> ))) : '' }
         </div>
