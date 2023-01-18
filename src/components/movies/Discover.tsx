@@ -12,7 +12,7 @@ function Discover() {
     const [loading, setLoading] = useState<boolean>(false);
     const [pageNumber, setPage] = useState<number>(1)
     const [category, setCategory] = useState<Category>(Category.movie);
-    const [filter, setFilter] = useState<string>('popularity.desc');
+    const filter = useState<string>('popularity.desc');
 
     useEffect(() => {
         setLoading(true)
