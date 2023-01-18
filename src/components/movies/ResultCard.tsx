@@ -40,7 +40,7 @@ export const ResultCard = ({ movie } : ResultCardProps) => {
                     <div className="card-action">
                         <div className="controls">
                             <button
-                                className="watchlist-btn btn green accent-3"
+                                 className={`${movie.title.replaceAll(" ", "-")}-watchlist btn green accent-3`}
                                 disabled={watchlistDisabled}
                                 onClick={() => addWatchlist(movie)}
                             >
@@ -48,7 +48,7 @@ export const ResultCard = ({ movie } : ResultCardProps) => {
                             </button>
 
                             <button
-                                className="watched-btn btn green accent-3"
+                                className={`${movie.title.replaceAll(" ", "-")}-watched btn green accent-3`}
                                 disabled={watchedDisabled}
                                 onClick={() => addWatched(movie)}
                             >

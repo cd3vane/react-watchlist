@@ -25,7 +25,7 @@ describe('The Home Page', () => {
         cy.get('.validate')
             .type(typedText)
             .should('have.value', typedText)
-        cy.get('.Evil-Dead-Rise > div > div > div.card-stacked > div.card-action > div > button.watchlist-btn.btn.green.accent-3').click()
+        cy.get('button.Evil-Dead-Rise-watchlist.btn.green.accent-3').click()
             .should('be.disabled')
             .should(() => {
                 expect(localStorage.getItem('watchlist')).to.not.be.null
@@ -39,7 +39,7 @@ describe('The Home Page', () => {
         cy.get('.validate')
             .type(typedText)
             .should('have.value', typedText)
-        cy.get('.Evil-Dead-Rise > div > div > div.card-stacked > div.card-action > div > button.watched-btn.btn.green.accent-3').click()
+        cy.get('button.Evil-Dead-Rise-watchlist.btn.green.accent-3').click()
             .should('be.disabled')
             .should(() => {
                 expect(localStorage.getItem('watched')).to.not.be.null
