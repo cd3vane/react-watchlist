@@ -1,3 +1,4 @@
+[![Cypress Tests](https://github.com/cd3vane/watchlist/actions/workflows/main.yml/badge.svg)](https://github.com/cd3vane/watchlist/actions/workflows/main.yml)
 # React with Typescript Watchlist
 
 ## [Live Demo](https://cd3vane.github.io/watchlist)
