@@ -22,6 +22,7 @@ const AddMovie = () => {
                 <div className="input-field col s12">
                     <input type="text"
                            placeholder="Search for a movie"
+                           autoFocus
                            value={query}
                            onChange={onChange}className="validate"></input>
                 </div>
