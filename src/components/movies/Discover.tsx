@@ -21,7 +21,7 @@ function Discover() {
             setShows(response.data.results);
             setLoading(false)
         })
-    }, [category, pageNumber])
+    }, [category, pageNumber, filter])
 
     const switchCategory = (current : Category) => {
         if(current === Category.movie){
