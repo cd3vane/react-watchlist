@@ -11,7 +11,9 @@ const AddMovie = () => {
         e.preventDefault();
 
         setQuery(e.currentTarget.value);
+    
         const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.currentTarget.value}`;
+        
         axios.get(url).then((response ) => {
             setResults(response.data.results);
         })
