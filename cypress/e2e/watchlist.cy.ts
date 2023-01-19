@@ -15,7 +15,7 @@ describe('The watchlist', () => {
             .should('have.length', 2)
     })
 
-    it.only('moves an entry to the watched list', () => {
+    it('moves an entry to the watched list', () => {
         cy.get('.ctrl-btn:first').next()
             .should('have.text', "video_library").click()
         cy.get('.movie-card')
