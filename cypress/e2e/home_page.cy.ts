@@ -34,12 +34,12 @@ describe('The Home Page', () => {
 
     it('adds movie to watched', () => {
         cy.clearLocalStorage().should(() => {
-            expect(localStorage.getItem('watchled')).to.be.null
+            expect(localStorage.getItem('watched')).to.be.null
         }) 
         cy.get('.validate')
             .type(typedText)
             .should('have.value', typedText)
-        cy.get('button.Evil-Dead-Rise-watchlist.btn.green.accent-3').click()
+        cy.get('button.Evil-Dead-Rise-watched.btn.green.accent-3').click()
             .should('be.disabled')
             .should(() => {
                 expect(localStorage.getItem('watched')).to.not.be.null
