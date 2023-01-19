@@ -31,9 +31,9 @@ jobs:
         run: npm run lint
 
   typecheck:
-  name: ʦ TypeScript
-  runs-on: ubuntu-latest
-  steps:
+    name: TypeScript
+    runs-on: ubuntu-latest
+    steps:
     - name: 🛑 Cancel Previous Runs
       uses: styfle/cancel-workflow-action@0.11.0
 
