@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "overview": "Hello Im a good movie",
+        "poster_path": "/kuf6dutpsT0vSVehic3EZIqkOBt.jpg",
+        "title": "Puss in Boots: The Last Wish"
+    },
+    {
+        "id": 2,
+        "overview": "Very scary",
+        "poster_path": "/1XSYOP0JjjyMz1irihvWywro82r.jpg",
+        "title": "Violent Night"
+    },
+    {
+        "id": 3,
+        "overview": "Hello Im also good movie",
+        "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+        "title": "Avatar: The Way of Water"
+    }
+]
