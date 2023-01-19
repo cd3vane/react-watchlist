@@ -12,16 +12,15 @@ function Discover() {
     const [loading, setLoading] = useState<boolean>(false);
     const [pageNumber, setPage] = useState<number>(1)
     const [category, setCategory] = useState<Category>(Category.movie);
-    const filter = useState<string>('popularity.desc');
 
     useEffect(() => {
         setLoading(true)
-        const url = `https://api.themoviedb.org/3/discover/${category}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=${pageNumber}&include_adult=false&sort_by=${filter}`
+        const url = `https://api.themoviedb.org/3/discover/${category}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=${pageNumber}&include_adult=false&sort_by=popularity.desc`
         axios.get(url).then((response) => {
             setShows(response.data.results);
             setLoading(false)
         })
-    }, [category, pageNumber, filter])
+    }, [category, pageNumber])
 
     const switchCategory = (current : Category) => {
         if(current === Category.movie){
@@ -35,7 +34,7 @@ function Discover() {
     if (loading) {
         return( <div className='container'>
             <h1>Loading...</h1>;
-        </div>) 
+        </div>)
     }else{
         return (
             <div className="container">
