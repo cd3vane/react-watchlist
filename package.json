@@ -60,6 +60,8 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
+    "@testing-library/cypress": "^8.0.3",
+    "@types/eslint": "^8.4.10",
     "cypress": "^12.3.0",
     "cypress-localstorage-commands": "^2.2.2",
     "eslint": "^8.26.0",

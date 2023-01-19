@@ -2,9 +2,9 @@ describe('The search page', () => {
     it('successfully loads', () => {
       cy.visit('/search') 
     })
-  })
+})
 
-  describe('Add a movie to watchlist', () => {
+describe('Add a movie to watchlist', () => {
     const typedText = 'Evil Dead'
     beforeEach(() => {
         cy.visit('/search')
@@ -43,4 +43,4 @@ describe('The search page', () => {
                 expect(localStorage.getItem('watched')).to.not.be.null
             }) 
     })
-  })
+})
