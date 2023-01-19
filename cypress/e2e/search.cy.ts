@@ -1,8 +1,6 @@
-import { title } from "process"
-
-describe('The Home Page', () => {
+describe('The search page', () => {
     it('successfully loads', () => {
-      cy.visit('/watchlist') // change URL to match your dev URL
+      cy.visit('/search') 
     })
   })
 
